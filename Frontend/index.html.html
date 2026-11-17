@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring-Mass Simple Harmonic Oscillator Simulation</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include Chart.js for live energy & displacement graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Spring-Mass Simple Harmonic Oscillator</h1>
+            <p>Applied Physics Project Simulation Dashboard</p>
+        </header>
+
+        <div class="main-grid">
+            <!-- Left Panel: Controls & Visual Canvas -->
+            <div class="simulation-panel">
+                <div class="canvas-container">
+                    <canvas id="simCanvas" width="600" height="200"></canvas>
+                </div>
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="massRange">Mass ($m$): <span id="massVal">1.0</span> kg</label>
+                        <input type="range" id="massRange" min="0.2" max="5.0" step="0.1" value="1.0">
+                    </div>
+                    <div class="control-group">
+                        <label for="kRange">Spring Constant ($k$): <span id="kVal">20</span> N/m</label>
+                        <input type="range" id="kRange" min="5" max="50" step="1" value="20">
+                    </div>
+                    <div class="control-group">
+                        <label for="cRange">Damping ($c$): <span id="cVal">0.2</span> Ns/m</label>
+                        <input type="range" id="cRange" min="0.0" max="2.0" step="0.05" value="0.2">
+                    </div>
+                    <button id="resetBtn">Reset Simulation</button>
+                </div>
+            </div>
+
+            <!-- Right Panel: Live Graphs -->
+            <div class="graph-panel">
+                <canvas id="oscillationChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
